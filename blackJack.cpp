@@ -68,7 +68,7 @@ static bool playAgain(std::array<Card_t, 52> &deck)
 	char	decision;
 	do
 	{
-		cout << "Do you wanna play again? y/n" << endl;
+		cout << " Do you wanna play again? y/n" << endl;
 		cin >> decision;
 	} while (decision != 'y' && decision != 'n');
 	if (decision == 'y')
