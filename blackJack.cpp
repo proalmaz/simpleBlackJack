@@ -63,7 +63,7 @@ bool playBlackJack(std::array<Card_t, 52> &deck)
 	}
 }
 
-static void playAgain(std::array<Card_t, 52> &deck)
+static bool playAgain(std::array<Card_t, 52> &deck)
 {
 	char	decision;
 	do
@@ -75,9 +75,13 @@ static void playAgain(std::array<Card_t, 52> &deck)
 	{
 		shuffleDeck(deck);
 		playBlackJack(deck);
+		return true;
 	}
 	else
+	{
 		cout << "Bye bye!" << endl;
+		return false;
+	}
 }
 
 int main()
@@ -87,6 +91,7 @@ int main()
 	initializeDeck(deck);
 	shuffleDeck(deck);
 	playBlackJack(deck);
-	playAgain(deck);
+	while (playAgain(deck))
+	{}
 	return (0);
 }
