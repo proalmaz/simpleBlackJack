@@ -6,6 +6,7 @@
 #include <ctime>
 #include <array>
 #include <thread>
+#include <unistd.h>
 
 using namespace std;
 

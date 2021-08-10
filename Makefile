@@ -1,4 +1,4 @@
-NAME = simpleBlackJack.a
+NAME = simpleBlackJack
 
 SRC =	BJ_utils1.cpp \
 		BJ_utils2.cpp \
@@ -6,22 +6,18 @@ SRC =	BJ_utils1.cpp \
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
-
-OBJS = ${SRC:.c=.o}
+OBJS = ${SRC:%.cpp=%.o}
 
 all: ${NAME}
 
 ${NAME}:${OBJS}
-	${NAME} ${OBJS}
+	$(CC) ${OBJS} -o ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -g $< -o $@
+	$(CC) -c -g $< -o $@
 
 clean:
 	rm -rf ${OBJS}
 
 fclean: clean
-	rm -rf ${NAME}
-
-re: clean all
+	rm -rf $(NAME)

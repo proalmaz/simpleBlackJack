@@ -22,14 +22,13 @@ static int userMove(std::array<Card_t, 52> &deck,
 
 static int dealerMove(std::array<Card_t, 52> &deck, int i, int sumDealer)
 {
-	using namespace std::chrono_literals;
 
 	while (sumDealer < 17)
 	{
 		cout << "Dealer has " << sumDealer << " points and he take one more "
 											  "card!"	<< endl;
 		sumDealer += getCardValue(deck[i++]);
-		std::this_thread::sleep_for(1500ms);
+		sleep(1);
 	}
 	return sumDealer;
 }
