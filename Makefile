@@ -16,6 +16,9 @@ ${NAME}:${OBJS}
 %.o: %.c
 	$(CC) -c -g $< -o $@
 
+run: all
+	clear && make clean && ./$(NAME)
+
 clean:
 	rm -rf ${OBJS}
 
