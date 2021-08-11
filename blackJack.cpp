@@ -33,14 +33,10 @@ static int dealerMove(std::array<Card_t, 52> &deck, int i, int sumDealer)
 	return sumDealer;
 }
 
-bool playBlackJack(std::array<Card_t, 52> &deck)
+bool playBlackJack(std::array<Card_t, 52> &deck, string userName)
 {
 	int 	sumUser = 0, sumDealer = 0;
 	int 	i = 0; // iterator for cards;
-	string 	userName;
-
-	cout << "Please enter your name: ";
-	cin >> userName;
 	while (true)
 	{
 		sumDealer += getCardValue(deck[i++]);
@@ -63,7 +59,7 @@ bool playBlackJack(std::array<Card_t, 52> &deck)
 	}
 }
 
-static bool playAgain(std::array<Card_t, 52> &deck)
+static bool playAgain(std::array<Card_t, 52> &deck, string userName)
 {
 	char	decision;
 	do
@@ -74,7 +70,7 @@ static bool playAgain(std::array<Card_t, 52> &deck)
 	if (decision == 'y')
 	{
 		shuffleDeck(deck);
-		playBlackJack(deck);
+		playBlackJack(deck, userName);
 		return true;
 	}
 	else
@@ -87,11 +83,14 @@ static bool playAgain(std::array<Card_t, 52> &deck)
 int main()
 {
 	std::array<Card_t, 52> deck;
+	string 	userName;
 
+	cout << "Please enter your name: ";
+	cin >> userName;
 	initializeDeck(deck);
 	shuffleDeck(deck);
-	playBlackJack(deck);
-	while (playAgain(deck))
+	playBlackJack(deck, userName);
+	while (playAgain(deck, userName))
 	{}
 	return (0);
 }
