@@ -26,8 +26,10 @@
    
    
 Чтобы сыграть в мою версию Black Jack'a выполните следующие команды:
-1. git clone https://github.com/proalmaz/simpleBlackJack.git simpleBlackJack
-2. cd simpleBlackJack
-3. make run
+```
+git clone https://github.com/proalmaz/simpleBlackJack.git simpleBlackJack
+cd simpleBlackJack
+make run
+```
 
 Enjoy!
